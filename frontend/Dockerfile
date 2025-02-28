@@ -7,6 +7,7 @@ EXPOSE 3000
 COPY package-lock.json package.json ./
 
 RUN npm install --silent
+RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
 
 COPY . ./
 
